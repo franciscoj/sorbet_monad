@@ -6,10 +6,18 @@ require "sorbet-runtime"
 class RTest < Minitest::Test
   extend T::Sig
 
-  def test_ok
-    ok = R.ok("foo")
+  def test_unwrap_ok
+    ok = R::Ok.new("foo")
+    value = R.unwrap!(ok)
 
-    T.let(ok.value, String)
-    assert ok.value == "foo"
+    assert  value == "foo"
+  end
+
+  def test_unwrap_err
+    err = R::Err.new(failure: ['Some err msg'])
+
+    assert_raises(R::UnwrapException) do
+      R.unwrap!(err)
+    end
   end
 end

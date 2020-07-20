@@ -1,4 +1,4 @@
-# typed: true
+# typed: strict
 
 require "sorbet-runtime"
 
@@ -11,7 +11,7 @@ module R
 
     sig { params(value: Elem).void }
     def initialize(value)
-      @value = value
+      @value = T.let(value, Elem)
     end
 
     sig { returns(Elem) }

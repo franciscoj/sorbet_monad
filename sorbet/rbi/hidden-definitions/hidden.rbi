@@ -3873,6 +3873,35 @@ end
 module Minitest::Parallel
 end
 
+class Minitest::PrideIO
+  def initialize(io); end
+
+  def io(); end
+
+  def method_missing(msg, *args); end
+
+  def pride(string); end
+
+  def print(o); end
+
+  def puts(*o); end
+  ESC = ::T.let(nil, ::T.untyped)
+  NND = ::T.let(nil, ::T.untyped)
+end
+
+class Minitest::PrideIO
+  def self.pride!(); end
+
+  def self.pride?(); end
+end
+
+class Minitest::PrideLOL
+  PI_3 = ::T.let(nil, ::T.untyped)
+end
+
+class Minitest::PrideLOL
+end
+
 class Minitest::ProgressReporter
 end
 
@@ -4201,6 +4230,10 @@ module Minitest
   def self.parallel_executor(); end
 
   def self.parallel_executor=(parallel_executor); end
+
+  def self.plugin_pride_init(options); end
+
+  def self.plugin_pride_options(opts, _options); end
 
   def self.process_args(args=T.unsafe(nil)); end
 
@@ -7012,6 +7045,21 @@ module Psych
   def self.load_tags=(load_tags); end
 
   def self.remove_type(type_tag); end
+end
+
+class R::Err
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class R::Ok
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+module R
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
 end
 
 class REXML::AttlistDecl
