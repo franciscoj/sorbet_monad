@@ -1,5 +1,8 @@
 # Hello monad!
 
+**WARNING**: Don't try to use this, it is incomplete and not working. This was
+just an attempt that I'm sharing to see if someone can help somehow :)
+
 I've been lately using [Sorbet][sorbet] a lot. Besides that I've been using
 monads at work for some stuff. Specifically the `Result` monad.
 
