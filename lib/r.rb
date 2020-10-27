@@ -10,12 +10,22 @@ module R
   UnwrapException = Class.new(Error)
 
   sig do
-      params(
+    type_parameters(:U)
+      .params(value: T.type_parameter(:U))
+      .returns(::R::Ok[T.type_parameter(:U)])
+  end
+  def self.ok(value)
+    R::Ok[T.type_parameter(:U)].new(value)
+  end
+
+  sig do
+    type_parameters(:U)
+      .params(
         result: T.any(
-          ::R::Ok[String],
+          ::R::Ok[T.type_parameter(:U)],
           ::R::Err
         )
-      ).returns(T.untyped)
+      ).returns(T.type_parameter(:U))
   end
   def self.unwrap!(result)
     case result

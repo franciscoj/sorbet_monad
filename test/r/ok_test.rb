@@ -12,4 +12,3 @@ class R::OkTest < Minitest::Test
     assert ok.value == "foo"
   end
 end
-

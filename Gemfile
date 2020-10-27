@@ -6,5 +6,5 @@ gemspec
 gem "rake", "~> 12.0"
 gem "minitest", "~> 5.0"
 gem "standard", group: [:development, :test]
-gem 'sorbet', :group => :development
-gem 'sorbet-runtime'
+gem "sorbet", group: :development
+gem "sorbet-runtime"
